@@ -1,0 +1,54 @@
+.navbar-component-container{
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.app-logo-heading{
+    display: flex;
+    width: 105px;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 500;
+    color: blueviolet;
+}
+
+.nav-menu-active{
+    background-color: rgba(228, 209, 246, 0.289);
+    padding: 3px 5px 3px 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.nav-menu-not-active{
+    margin-left: 10px;
+    padding: 3px 5px 3px 5px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.sign-in-btn-navbar{
+    background-color: rgb(228, 208, 246);
+    padding: 3px 5px 3px 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 12px;
+    border: 0px;
+    cursor: pointer;
+}
+.sign-in-btn-navbar:hover{
+    background-color: rgb(191, 128, 245);
+    color: aliceblue;
+    padding: 3px 5px 3px 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 12px;
+    border: 0px;
+    cursor: pointer;
+}

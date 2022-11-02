@@ -1,0 +1,8 @@
+.header-conponent-container{
+    background-color: rgba(255, 255, 255, 0.67);
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
