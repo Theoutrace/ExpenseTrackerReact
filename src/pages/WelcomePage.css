@@ -1,0 +1,6 @@
+.welcome-component{
+    margin-top: 20px;
+    font-size: 20px;
+    padding-bottom:10px ;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.167);
+}

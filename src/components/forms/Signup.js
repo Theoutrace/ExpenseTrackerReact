@@ -3,16 +3,15 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "../../Store/auth/auth-context";
 import "./Signup.css";
 
-
-
-const Signup = () => {
+const Signup = (props) => {
   const [checkPass, setCheckPass] = useState("");
-  // get context 
-  const authCtx = useContext(AuthContext)
-  console.log(authCtx);
-  const history = useNavigate()
+  // get context
+  const authCtx = useContext(AuthContext);
+  // console.log(authCtx);
+  const history = useNavigate();
 
-  const URL = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC4NwKi-WNuGvMdl2_U3M7motBl31iKQO4'
+  const URL =
+    "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC4NwKi-WNuGvMdl2_U3M7motBl31iKQO4";
 
   const inputEmailRef = useRef();
   const inputPasswordRef = useRef();
@@ -25,8 +24,6 @@ const Signup = () => {
     const enteredPassword = inputPasswordRef.current.value;
     const enteredConfirmPassword = inputConfirmPasswordRef.current.value;
 
-    console.log("email:", enteredEmail);
-    console.log("pass", enteredPassword, "confirm", enteredConfirmPassword);
 
     // check if password === confirmed password else alert not matched
     if (enteredPassword !== enteredConfirmPassword) {
@@ -35,28 +32,33 @@ const Signup = () => {
     } else {
       setCheckPass("");
       //send this data for signup
-        fetch(URL,{
-            method:'POST',
-            body: JSON.stringify({
-                email: enteredEmail,
-                password: enteredPassword
-            }),
-            headers:{'Content-Type':'application/json'}
-        }).then((res)=>{
-            if(res.ok){
-                return res.json().then(data=>{
-                    authCtx.login(data.idToken)
-                    history('/home')
-                })
-            }else{
-                const errorMsg= 'Authentication Failed'
-                alert(errorMsg)
-            }
-        })
-      
+      fetch(URL, {
+        method: "POST",
+        body: JSON.stringify({
+          email: enteredEmail,
+          password: enteredPassword,
+          returnSecureToken: true
+        }),
+        headers: { "Content-Type": "application/json" },
+      }).then((res) => {
+        if (res.ok) {
+          return res.json().then((data) => {
+            authCtx.login(data.idToken);
+            history("/home");
+          });
+        } else {
+          const errorMsg = "Authentication Failed";
+          alert(errorMsg);
+        }
+      });
 
       // receive token and pass to login in context
     }
+  };
+
+  //---------------------------------------------------------------------------------------------------------
+  const loginSignupToggleHandler = () => {
+    props.onToggle();
   };
 
   return (
@@ -89,7 +91,8 @@ const Signup = () => {
         </form>
         <div className="have-an-account-option-container">
           <div className="have-an-account-text-n-btn-container">
-            Have an account? <button>Login</button>
+            Have an account?{" "}
+            <button onClick={loginSignupToggleHandler}>Login</button>
           </div>
         </div>
       </div>

@@ -1,12 +1,19 @@
-import React from 'react'
-import Signup from '../components/forms/Signup'
+import React, { useState } from "react";
+import Login from "../components/forms/Login";
+import Signup from "../components/forms/Signup";
 
 const LoginSignup = () => {
+  const [showLogin, setShowLogin] = useState(false);
+
+  const toggleFormLoginSignup = () => {
+    setShowLogin((previous) => !previous);
+  };
   return (
     <div>
-      <Signup/>
+      {!showLogin && <Signup onToggle={toggleFormLoginSignup} />}
+      {showLogin && <Login onToggle={toggleFormLoginSignup} />}
     </div>
-  )
-}
+  );
+};
 
-export default LoginSignup
+export default LoginSignup;
