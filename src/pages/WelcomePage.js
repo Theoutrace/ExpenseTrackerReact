@@ -1,17 +1,15 @@
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import React, { Fragment, useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../Store/auth/auth-context";
 import "./WelcomePage.css";
 
 const WelcomePage = () => {
   const authCtx=useContext(AuthContext)
-  // const [emailVfied, setEmailVfied] = useState('')
-  // // console.log(authCtx);
+
   const history = useNavigate()
   const completeProfileNowhandler = ()=>{
     history('/profile')
   }
-
 
 
   const verifyMailHandler = ()=>{
@@ -23,15 +21,12 @@ const WelcomePage = () => {
       }),
       headers: {'Content-Type': 'application/json'}
     }).then(res=>{
-      if(res.ok){
-        return res.json().then(data=>{
-          console.log(data);
-          // setEmailVfied(data.email)
+        res.json().then(data=>{
+          if(data.error){
+            const errorMsg = data.error.errors[0].message
+            alert(errorMsg)
+          }
         })
-      }else{
-        const errorMsg = 'email verification failed'
-        alert(errorMsg)
-      }
     })
   }
 
