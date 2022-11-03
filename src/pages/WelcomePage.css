@@ -33,3 +33,28 @@
     font-weight: 600;
     cursor: pointer;
 }
+
+.under-welcome-msg-component-verify-btn-container{
+    margin-top: 10px;
+}
+
+.under-welcome-msg-component-verify-btn-container button{
+    width: 300px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.261);
+    padding: 5px;
+    background-color: rgb(131, 229, 141);
+    color: rgba(59, 59, 59, 0.96);
+    font-weight: 600;
+}
+.under-welcome-msg-component-verify-btn-container button:hover{
+    width: 300px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.261);
+    padding: 5px;
+    background-color: rgb(88, 222, 101);
+    color: white;
+    font-weight: 600;
+}
