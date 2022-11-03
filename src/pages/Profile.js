@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Profile.css";
 import gitIcon from "./pageImages/github.png";
 import globeIcon from "./pageImages/globe.png";
@@ -6,10 +6,35 @@ import AuthContext from "../Store/auth/auth-context";
 
 const Profile = () => {
     const authCtx = useContext(AuthContext)
-    // const [imageState, setImgState]=useState('')
+
+    const [name, setName] = useState('')
+    const [imgUrl, setImgUrl] = useState('')
+
     // console.log(authCtx);
     const inputNameRef = useRef()
     const inputPhotoUrlRef = useRef()
+
+    useEffect(()=>{
+        fetch('https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyC4NwKi-WNuGvMdl2_U3M7motBl31iKQO4',{
+            method: 'POST',
+            body:JSON.stringify({
+                idToken: authCtx.token
+            }),
+            headers: {'Content-Type': 'application/json'}
+        }).then(res=>{
+            if(res.ok){
+                return res.json().then(data=>{
+                    // console.log(data);
+                    setName(data.users[0].displayName)
+                    setImgUrl(data.users[0].photoUrl)
+                })
+            }else{
+                const errorMsg = 'Something Went Wrong while getting data'
+                alert(errorMsg)
+            }
+        })
+
+    },[authCtx.token])
 
     const userDetailsUpdateFormHandler = (e)=>{
         e.preventDefault()
@@ -23,7 +48,6 @@ const Profile = () => {
             alert('Fill the details please!')
             return;
         }else{
-            // console.log(enteredName, enteredPhotoUrl);
             if(authCtx.token.length>0){
                 fetch(URL,{
                     method: 'POST',
@@ -36,7 +60,7 @@ const Profile = () => {
                 }).then(res=>{
                     if(res.ok){
                         return res.json().then(data=>{
-                            console.log(data);
+                            // console.log(data);
                             // setImgState(data.photoUrl)
                         })
                     }else{
@@ -60,7 +84,6 @@ const Profile = () => {
         </div>
       </div>
       <div>
-        {/* <img src={imageState}></img> */}
       </div>
       <div className="contact-details-container">
         <div className="contact-details-text-form-container">
@@ -84,7 +107,7 @@ const Profile = () => {
                   width="25"
                 ></img>
                 <label htmlFor="full-name-idx">Full Name: </label>
-                <input type="text" placeholder="Name" id="full-name-idx" ref={inputNameRef}/>
+                <input type="text" placeholder="Name" id="full-name-idx" ref={inputNameRef} defaultValue={name}/>
               </div>
 
               <div className="icon-input-label-single">
@@ -95,7 +118,7 @@ const Profile = () => {
                   width="25"
                 ></img>
                 <label htmlFor="profile-url-pic-idx">Profile Photo URL: </label>
-                <input type="text" placeholder="URL" id="profile-url-pic-idx" ref={inputPhotoUrlRef}/>
+                <input type="text" placeholder="URL" id="profile-url-pic-idx" ref={inputPhotoUrlRef} defaultValue={imgUrl}/>
               </div>
             </div>
             <div className="user-details-submit-btn-cntnr">
