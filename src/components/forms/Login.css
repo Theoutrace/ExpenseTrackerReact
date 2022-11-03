@@ -36,7 +36,17 @@
 .signup-form-container form input{
     height: 20px;
     margin-bottom: 5px;
-    border: 1px solid rgba(128, 128, 128, 0.229);
+    border: 1px solid rgba(128, 128, 128, 0.157);
+    border-radius: 5px; 
+    width: 190px;
+    padding: 5px;
+    outline: none;
+}
+
+.signup-form-container form input:focus{
+    height: 20px;
+    margin-bottom: 5px;
+    border: 1px solid rgba(45, 103, 210, 0.308);
     border-radius: 5px; 
     width: 190px;
     padding: 5px;

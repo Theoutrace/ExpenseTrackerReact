@@ -5,4 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-box-shadow: 0 3px 5px rgba(99, 60, 104, 0.194);
+    -moz-box-shadow: 0 3px 5px rgba(130, 76, 128, 0.201);
+    box-shadow: 0 3px 5px rgba(39, 56, 244, 0.231);
 }

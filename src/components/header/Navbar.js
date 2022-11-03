@@ -8,7 +8,7 @@ const Navbar = () => {
   const authCtx = useContext(AuthContext)
   return (
     <div className="navbar-component-container">
-      <div className="app-logo-heading"><img src={iconHeader} alt="logo" width='25px'/>Kharchila</div>
+      <div className="app-logo-heading"><img src={iconHeader} alt="logo" width='25px'/><a href="/">Kharchila</a></div>
       <div>
         <NavLink to='/home' className={(status)=> status.isActive? 'nav-menu-active': 'nav-menu-not-active'}>Home</NavLink>
         <NavLink to='/products' className={(status)=> status.isActive? 'nav-menu-active': 'nav-menu-not-active'}>Products</NavLink>

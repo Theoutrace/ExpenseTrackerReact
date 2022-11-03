@@ -19,7 +19,6 @@ const Login = (props) => {
         const enteredEmail = inputEmailRef.current.value
         const enteredPassword = inputPasswordRef.current.value
 
-        console.log(enteredEmail, enteredPassword);
 
         fetch(URL,{
             method: 'POST',
@@ -32,7 +31,6 @@ const Login = (props) => {
         }).then(res=>{
             if(res.ok){
                 return res.json().then(data=>{
-                    // console.log(data.idToken);
                     authCtx.login(data.idToken)
                     history('/welcome')
 
