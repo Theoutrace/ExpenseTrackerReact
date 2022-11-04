@@ -14,8 +14,6 @@ const Navbar = () => {
   }
 
 
-
-
   return (
     <div className="navbar-component-container">
       <div className="app-logo-heading"><img src={iconHeader} alt="logo" width='25px'/><a href="/">Kharchila</a></div>

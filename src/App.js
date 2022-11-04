@@ -19,6 +19,7 @@ function App() {
           {!authCtx.isLoggedIn && <Route path='/login' element={<LoginSignup/>}/>}
           {authCtx.isLoggedIn && <Route path='/welcome' element={<WelcomePage/>}/>}
           {authCtx.isLoggedIn && <Route path='/profile' element={<Profile/>}/>}
+          {!authCtx.isLoggedIn && <Route path='/welcome' element={<Navigate to='/login'/>}/>}
         </Routes>
       {/* </div> */}
     </div>
