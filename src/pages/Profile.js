@@ -10,11 +10,12 @@ const Profile = () => {
     const [name, setName] = useState('')
     const [imgUrl, setImgUrl] = useState('')
 
-    // console.log(authCtx);
+
     const inputNameRef = useRef()
     const inputPhotoUrlRef = useRef()
 
     useEffect(()=>{
+      // console.log('useEffect ran');
         fetch('https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyC4NwKi-WNuGvMdl2_U3M7motBl31iKQO4',{
             method: 'POST',
             body:JSON.stringify({
@@ -24,9 +25,8 @@ const Profile = () => {
         }).then(res=>{
             if(res.ok){
                 return res.json().then(data=>{
-                    // console.log(data);
-                    setName(data.users[0].displayName)
-                    setImgUrl(data.users[0].photoUrl)
+                    setName(()=>data.users[0].displayName)
+                    setImgUrl(()=>data.users[0].photoUrl)
                 })
             }else{
                 const errorMsg = 'Something Went Wrong while getting data'
