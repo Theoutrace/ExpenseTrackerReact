@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/header/Header';
+import ForgotPassword from './pages/ForgotPassword';
 import LoginSignup from './pages/LoginSignup';
 import Profile from './pages/Profile';
 import WelcomePage from './pages/WelcomePage';
@@ -20,6 +21,7 @@ function App() {
           {authCtx.isLoggedIn && <Route path='/welcome' element={<WelcomePage/>}/>}
           {authCtx.isLoggedIn && <Route path='/profile' element={<Profile/>}/>}
           {!authCtx.isLoggedIn && <Route path='/welcome' element={<Navigate to='/login'/>}/>}
+          {!authCtx.isLoggedIn && <Route path='/forgot-password' element={<ForgotPassword/>}/>}
         </Routes>
       {/* </div> */}
     </div>

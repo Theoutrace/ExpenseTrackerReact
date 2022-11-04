@@ -44,6 +44,10 @@ const Login = (props) => {
 
     }
 
+    const forgetPasswordHandelerDiv = ()=>{
+      history('/forgot-password')
+    }
+
     const loginSignupToggleHandler = ()=>{
         props.onToggle()
     }
@@ -68,7 +72,7 @@ const Login = (props) => {
         />
         <div className="signup-form-btn-container">
           <button>Login</button>
-          <div className='forget-pass-txt-container'>Forgot password</div>
+          <div className='forget-pass-txt-container' onClick={forgetPasswordHandelerDiv}>Forgot password</div>
         </div>
       </form>
       <div className="have-an-account-option-container">
