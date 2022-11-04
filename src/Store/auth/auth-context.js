@@ -19,7 +19,7 @@ export const AuthContextProvider = (props)=>{
     const loginHandler = (token)=>{
         localStorage.setItem('token', token)
         setToken(token)
-        console.log('User has successfully signed up');
+        // console.log('User has successfully signed up');
     }
 
     const logoutHandler = ()=>{

@@ -1,0 +1,67 @@
+.amt-cat-container{
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+
+.amt-cntnr{
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    align-items: center;
+}
+
+.img-logo-cnt-nr{
+    /* background-color: rgb(70, 225, 225); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.amt-txt-cnt{
+    /* background-color: azure; */
+    font-size: 18px;
+    font-weight: 600;
+    color: blueviolet;
+    width: 70px;
+    display: flex;
+    justify-content: left;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+
+.desc-otr-cntr{
+    /* background-color: aqua; */
+    padding-left: 25px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 25px;
+}
+
+.desc-title-txt{
+    font-size: 12px;
+    /* background-color: brown; */
+    width: 70px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+.desc-desc-txt-usr-dfnd{
+    /* background-color: blueviolet; */
+    width: 200px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 5px;
+}
