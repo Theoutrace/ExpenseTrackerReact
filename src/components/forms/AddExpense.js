@@ -1,9 +1,12 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
+import ExpContext from "../../Store/expenseCtx/exp-context";
 import SingleExpense from "../expense/SingleExpense";
 import "./AddExpense.css";
 
 const AddExpense = () => {
-  const [expen, setExpe] = useState([]);
+  const expCtx = useContext(ExpContext)
+  // console.log(expCtx);
+
   const meoneyRef = useRef();
   const descRef = useRef();
   const catRef = useRef();
@@ -21,7 +24,7 @@ const AddExpense = () => {
       category: enteredCat,
     };
 
-    setExpe((prev) => [...prev, expObj]);
+    expCtx.addExp(expObj)
 
     meoneyRef.current.value = "";
     descRef.current.value = "";
@@ -86,7 +89,7 @@ const AddExpense = () => {
         </div>
       </form>
       <div className="all-exp-container-tog">
-        {expen.map((itm) => {
+        {expCtx.expItems.map((itm) => {
           return (
             <SingleExpense
               className="ssingle-obj adExp-form-cont-ner"
