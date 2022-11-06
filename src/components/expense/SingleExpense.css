@@ -1,67 +1,136 @@
-.amt-cat-container{
-    /* background-color: aqua; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 25px;
-    padding-right: 25px;
+.item-edit-dlt-container {
+  /* background-color: aqua; */
+  margin-bottom: 2px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
-.amt-cntnr{
-    /* background-color: aquamarine; */
-    display: flex;
-    justify-content: space-between;
-    width: 100px;
-    align-items: center;
+.edit-btn-itm{
+  margin-right: 20px;
 }
 
-.img-logo-cnt-nr{
-    /* background-color: rgb(70, 225, 225); */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.amt-cat-container {
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
-.amt-txt-cnt{
-    /* background-color: azure; */
-    font-size: 18px;
-    font-weight: 600;
-    color: blueviolet;
-    width: 70px;
-    display: flex;
-    justify-content: left;
-    margin-left: 5px;
-    font-size: 14px;
+.amt-cntnr {
+  /* background-color: aquamarine; */
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  align-items: center;
 }
 
-
-.desc-otr-cntr{
-    /* background-color: aqua; */
-    padding-left: 25px;
-    margin-top: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 25px;
+.img-logo-cnt-nr {
+  /* background-color: rgb(70, 225, 225); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.desc-title-txt{
-    font-size: 12px;
-    /* background-color: brown; */
-    width: 70px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: left;
+.amt-txt-cnt {
+  /* background-color: azure; */
+  font-size: 18px;
+  font-weight: 600;
+  color: blueviolet;
+  width: 70px;
+  display: flex;
+  justify-content: left;
+  margin-left: 5px;
+  font-size: 14px;
 }
 
-.desc-desc-txt-usr-dfnd{
-    /* background-color: blueviolet; */
-    width: 200px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    margin-left: 5px;
+.desc-otr-cntr {
+  /* background-color: aqua; */
+  padding-left: 25px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 25px;
 }
+
+.desc-title-txt {
+  font-size: 12px;
+  /* background-color: brown; */
+  width: 70px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+}
+
+.desc-desc-txt-usr-dfnd {
+  /* background-color: blueviolet; */
+  width: 200px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.edt-dlt-cntr-btn-cntenr {
+  margin-left: -15px;
+}
+
+.edt-cntr-btn-cntenr {
+  margin-left: 15px;
+  z-index: 2;
+}
+
+.dlt-edit-btn-cntr button {
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  background-color: rgba(240, 248, 255, 0);
+  border: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dlt-edit-btn-cntr button img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  background-color: rgba(240, 248, 255, 0);
+  border: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid rgba(128, 0, 128, 0);
+}
+
+.dlt-edit-btn-cntr button img:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  background-color: rgba(240, 248, 255, 0);
+  border: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid rgba(172, 40, 172, 0.19);
+}
+
+.inactive-pro{
+    background-color: rgba(192, 210, 248, 0.47);
+    color: rgba(137, 137, 137, 0.493);
+    margin-top: 10px;
+    border: 1px solid rgba(124, 162, 238, 0.081);
+    padding: 10px;
+    width: 355px;
+    border-radius: 10px;
+    /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
+    width: 280px;
+    box-shadow: rgba(100, 99, 99, 0.048) 0px 25px 50px -12px;box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.048) 0px 0px 0px 1px;
+}
+

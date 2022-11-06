@@ -4,7 +4,8 @@ import SingleExpense from "../expense/SingleExpense";
 import "./AddExpense.css";
 
 const AddExpense = () => {
-  const expCtx = useContext(ExpContext)
+  const [id, setId] = useState(false);
+  const expCtx = useContext(ExpContext);
   // console.log(expCtx);
 
   const meoneyRef = useRef();
@@ -19,16 +20,30 @@ const AddExpense = () => {
     const enteredCat = catRef.current.value;
 
     const expObj = {
-      amount: enteredAmount,
-      description: enteredDesc,
-      category: enteredCat,
+      id: id,
+      values: {
+        amount: enteredAmount,
+        description: enteredDesc,
+        category: enteredCat,
+      },
     };
 
-    expCtx.addExp(expObj)
+    expCtx.addExp(expObj);
 
     meoneyRef.current.value = "";
     descRef.current.value = "";
     catRef.current.value = "";
+    setId(()=>false)
+  };
+
+  const editExpenseHandler = (objWithId,style) => {
+    // console.log(objWithId);
+    setId(()=>objWithId.id)
+
+
+    meoneyRef.current.value = objWithId.values.amount;
+    descRef.current.value = objWithId.values.description;
+    catRef.current.value = objWithId.values.category;
   };
 
   return (
@@ -94,6 +109,7 @@ const AddExpense = () => {
             <SingleExpense
               className="ssingle-obj adExp-form-cont-ner"
               expObj={itm}
+              onClickEdit={editExpenseHandler}
             />
           );
         })}
