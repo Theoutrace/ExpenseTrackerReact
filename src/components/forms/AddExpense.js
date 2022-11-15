@@ -6,11 +6,14 @@ import SingleExpense from "../expense/SingleExpense";
 import ExpenseSkeleton from "../loaderSkeletons/ExpenseSkeleton";
 import premiumIcon from "../expense/imagesExp/premium.png";
 import "./AddExpense.css";
+import { themeActions } from "../../Store/theme/Theme";
 
 const AddExpense = () => {
   const expense = useSelector((state) => state.expense.expense);
   const totalExp = useSelector((state) => state.expense.totalExpense);
   const email = useSelector((state) => state.auth.email);
+  const theme = useSelector((state) => state.theme.theme);
+
   const [objId, setObjId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [askPremium, setAskPremium] = useState(false);
@@ -161,6 +164,35 @@ const AddExpense = () => {
     }
   }, [dispatch, expense]);
 
+  //======================================= premium ==============
+
+  const activatePremiumHandler = () => {
+    dispatch(themeActions.forPremium());
+  };
+
+  //======================================= premium ==============
+
+  //============== for csv download ================================
+  const data = [
+    ["category", "Amount", "Description"],
+  
+      expense.map((itm) => [
+        itm[0].values.category,
+        itm[0].values.amount,
+        itm[0].values.description,
+      ]),
+    
+  ];
+
+  function makeCsv(arr) {
+    return arr.map((r) => `${r}\n`);
+  }
+
+  const blob = new Blob([makeCsv(data)]);
+  const a1 = URL.createObjectURL(blob);
+
+  //============== for csv download ================================
+
   return (
     <div className="addExpense-contner">
       <form
@@ -224,13 +256,18 @@ const AddExpense = () => {
           <Fragment>
             <div className="total-text">Total: </div>
             <div className="total-text-exp">₹ {totalExp}</div>
-            {askPremium && (
+            {askPremium && !theme && (
               <div className="button-container-activ-pre">
-                <button>
+                <button onClick={activatePremiumHandler}>
                   Activate Premium{" "}
                   <img src={premiumIcon} alt="" width="14"></img>
                 </button>
               </div>
+            )}
+            {theme && (
+              <a href={a1} download="file.csv">
+                Download CSV
+              </a>
             )}
           </Fragment>
         )}

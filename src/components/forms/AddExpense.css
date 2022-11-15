@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Poppins:wght@100;400;700&display=swap');
 
 .addExpense-contner{
-    /* background-color: aqua; */
     /* padding-top: 20px; */
     display: flex;
     justify-content: center;
@@ -199,5 +198,9 @@
 }
 
 .total-text{
+    margin-right: 10px;
+}
+
+.total-text-exp{
     margin-right: 10px;
 }

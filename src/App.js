@@ -10,9 +10,11 @@ import WelcomePage from "./pages/WelcomePage";
 
 function App() {
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
+  const theme = useSelector((state)=>state.theme.theme)
+  // console.log(theme);
 
   return (
-    <div className="App">
+    <div className={theme? theme:"App" }>
       <div>
         <Header />
       </div>

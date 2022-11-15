@@ -9,3 +9,14 @@
     -moz-box-shadow: 0 3px 5px rgba(130, 76, 128, 0.201);
     box-shadow: 0 3px 5px rgba(39, 56, 244, 0.231);
 }
+
+.theme-toggle-btn{
+    width: 80px;
+    background-color: rgb(238, 225, 225);
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+}
