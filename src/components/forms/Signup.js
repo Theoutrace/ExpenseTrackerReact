@@ -1,12 +1,12 @@
 import React, { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AuthContext from "../../Store/auth/auth-context";
+
 import "./Signup.css";
 
 const Signup = (props) => {
   const [checkPass, setCheckPass] = useState("");
   // get context
-  const authCtx = useContext(AuthContext);
+  const authCtx = useContext('AuthContext');
   // console.log(authCtx);
   const history = useNavigate();
 

@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Profile.css";
 import gitIcon from "./pageImages/github.png";
 import globeIcon from "./pageImages/globe.png";
-import AuthContext from "../Store/auth/auth-context";
+
 
 const Profile = () => {
-    const authCtx = useContext(AuthContext)
+    const authCtx = useContext('AuthContext')
 
     const [name, setName] = useState('')
     const [imgUrl, setImgUrl] = useState('')

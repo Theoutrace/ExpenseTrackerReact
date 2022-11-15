@@ -1,0 +1,16 @@
+.item-edit-dlt-container-hi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: aqua; */
+}
+
+.expense-dummy-box {
+  background-color: rgba(131, 134, 134, 0.12);
+  width: 320px;
+  margin-top: 10px;
+  height: 60px;
+  border-radius: 10px;
+}
+

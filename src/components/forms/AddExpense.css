@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Poppins:wght@100;400;700&display=swap');
+
 .addExpense-contner{
     /* background-color: aqua; */
     /* padding-top: 20px; */
@@ -15,8 +17,9 @@
     padding: 10px;
     width: 355px;
     border-radius: 10px;
-    margin-left: -15px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    /* margin-left: -15px; */
+    /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
 }
 
@@ -25,7 +28,7 @@
     font-weight: 700;
     margin-bottom: 20px;
     font-size: 15px;
-    color: rgb(182, 25, 221);
+    color: rgb(43 21 150 / 54%);
     text-transform: uppercase;
 }
 
@@ -117,6 +120,9 @@
 
 .ssingle-obj{
     width: 280px;
+    margin-left: -15px;
+    display: flex;
+    flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
@@ -135,3 +141,63 @@
     display: none;
 }
 
+/* total expense container  */
+.total-exp-container{
+    background-color: #ffffff;
+    padding: 15px;
+    margin-top: 5px;
+    border-radius: 10px;
+    color: rgb(74, 69, 75);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    z-index: 5;
+}
+
+.button-container-activ-pre button{
+    /* background-color: rgb(0, 0, 0); */
+    margin-left: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(255, 250, 250, 0);
+    box-shadow: rgba(149, 157, 165, 0) 0px 8px 24px;
+    cursor: pointer;
+    background-image:
+    linear-gradient(
+      to top right, 
+      rgb(25, 222, 51), #a90cc5
+    );
+}
+
+.button-container-activ-pre button:hover{
+    /* background-color: rgb(0, 0, 0); */
+    margin-left: 30px;
+    color: rgb(74, 43, 199);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(74, 43, 199);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    cursor: pointer;
+    background-image:
+    linear-gradient(
+      to top right, 
+      rgb(188, 241, 195), #e6b3ef
+    );
+}
+
+.total-text{
+    margin-right: 10px;
+}

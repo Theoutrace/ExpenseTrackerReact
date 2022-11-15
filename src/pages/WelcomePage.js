@@ -1,10 +1,9 @@
 import React, { Fragment, useContext} from "react";
 import { useNavigate } from "react-router-dom";
-import AuthContext from "../Store/auth/auth-context";
 import "./WelcomePage.css";
 
 const WelcomePage = () => {
-  const authCtx=useContext(AuthContext)
+  const authCtx=useContext('AuthContext')
 
   const history = useNavigate()
   const completeProfileNowhandler = ()=>{
